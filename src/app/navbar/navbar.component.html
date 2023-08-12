@@ -1,0 +1,21 @@
+<div class="page-wrapper">
+  <div class="nav-wrapper">
+   <div class="grad-bar"></div>
+   <nav class="navbar">
+    <img  routerLink="/" src="./assets/téléchargement.png" alt="Describe Image" style="width: 40; height: 40px;">
+    <div class="menu-toggle" id="mobile-menu">
+       <span class="bar"></span>
+       <span class="bar"></span>
+       <span class="bar"></span>
+     </div>
+     <ul class="nav no-search" style="margin-right: px;">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item"><a (click)="scrollTo('brands')" [routerLink]="['/Home']">Brands</a></li>
+      <li class="nav-item"><a (click)="scrollTo('about')" [routerLink]="['/Home']">About Us</a></li>
+      <li class="nav-item"><a (click)="scrollTo('contact')" [routerLink]="['/Home']">Contact Us</a></li>
+    </ul>
+
+   </nav>
+   </div>
+ </div>
+

@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<app-searchbar (searchQueryChange)="onSearchQueryChange($event)"></app-searchbar>
+<section id="teslaSection">
+  <table>
+    <thead>
+      <tr>
+        <!-- Table header rows as before -->
+        <th>Vehicle Make</th>
+        <th>Vehicle Model</th>
+        <th>Image</th>
+        <th>Image Make</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through each car model on the current page -->
+      <ng-container *ngFor="let model of getCurrentPageModels()">
+        <tr>
+          <td>{{ model.vehicleMake }}</td>
+          <td>{{ model.vehicleModel }}</td>
+          <td><img src="{{ model.image }}" alt="Tesla Model" width="150" height="150"></td>
+          <td><img src="{{ model.makerImage }}" alt="Tesla Maker Logo" width="100" height="100"></td>
+          <td>
+            <!-- Show More/Show Less button for each car model -->
+            <button (click)="toggleShowMore(model)">
+              Show {{ model.showMore ? 'Less' : 'More' }}
+              <span *ngIf="model.showMore" class="caret-up">&#9650;</span>
+              <span *ngIf="!model.showMore" class="caret-down">&#9660;</span>
+            </button>
+          </td>
+        </tr>
+        <!-- Expanded row with additional data when Show More button is clicked -->
+        <tr *ngIf="model.showMore">
+          <!-- Data rows for the additional data -->
+          <td colspan="5">
+            <strong>Vehicle Model Version:</strong> {{ model.vehicleModelVersion }}<br>
+            <strong>Drivetrain Power (HP):</strong> {{ model.drivetrainPowerHP }}<br>
+            <strong>Performance Acceleration (0-100 km/h):</strong> {{ model.performanceAcceleration }}<br>
+            <strong>Performance Top Speed (km/h):</strong> {{ model.performanceTopspeed }}<br>
+            <strong>Range WLTP (km):</strong> {{ model.rangeWLTP }}<br>
+            <strong>Range Real (km):</strong> {{ model.rangeReal }}<br>
+            <strong>Efficiency Real (kWh/100 km):</strong> {{ model.efficiencyReal }}<br>
+            <strong>Charge Plug:</strong> {{ model.chargePlug }}<br>
+            <strong>Charge Standard Power (kW):</strong> {{ model.chargeStandardPower }}<br>
+            <strong>Charge Standard Phase:</strong> {{ model.chargeStandardPhase }}<br>
+            <strong>Charge Standard Phase Amp:</strong> {{ model.chargeStandardPhaseAmp }}<br>
+            <strong>Fast Charge Plug:</strong> {{ model.fastChargePlug }}<br>
+            <strong>Fast Charge Power Max (kW):</strong> {{ model.fastChargePowerMax }}<br>
+            <strong>Battery Capacity Full (kWh):</strong> {{ model.batteryCapacityFull }}
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</section>
+
+<div class="pagination">
+  <!-- Previous page button -->
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <!-- Page numbers -->
+  <span *ngFor="let pageNumber of getPageNumbers()" [class.current-page]="pageNumber === currentPage">{{ pageNumber }}</span>
+  <!-- Next page button -->
+  <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Next</button>
+</div>
+<app-footer></app-footer>
+

@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="searchBar">
+    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" [(ngModel)]="searchQuery" />
+    <select id="searchParameterSelect" name="searchParameterSelect" [(ngModel)]="searchParameter">
+      <option value="vehicleMake">Vehicle Make</option>
+      <option value="vehicleModel">Vehicle Model</option>
+      <option value="vehicleModelVersion">Vehicle Model Version</option>
+      <option value="drivetrainPowerHP">Drivetrain Power (HP)</option>
+      <option value="performanceAcceleration">Performance Acceleration (0-100 km/h)</option>
+      <option value="performanceTopspeed">Performance Top Speed (km/h)</option>
+      <option value="rangeWLTP">Range WLTP (km)</option>
+      <option value="rangeReal">Range Real (km)</option>
+      <option value="efficiencyReal">Efficiency Real (kWh/100 km)</option>
+      <option value="chargePlug">Charge Plug</option>
+      <option value="chargeStandardPower">Charge Standard Power (kW)</option>
+      <option value="chargeStandardPhase">Charge Standard Phase</option>
+      <option value="chargeStandardPhaseAmp">Charge Standard Phase Amp</option>
+      <option value="fastChargePlug">Fast Charge Plug</option>
+      <option value="fastChargePowerMax">Fast Charge Power Max (kW)</option>
+      <option value="batteryCapacityFull">Battery Capacity Full (kWh)</option>
+      <option value="id">ID</option>
+    </select>
+    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit" (click)="performSearch()">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+      </svg>
+    </button>
+  </div>
+</div>

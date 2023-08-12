@@ -1,0 +1,122 @@
+/* styles.css */
+/* styles.css */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+
+/* Apply styles to the entire table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Style the table header cells */
+th {
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Style the table data cells */
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Highlight table rows on hover */
+tr:hover {
+  background-color: #f9f9f9;
+}
+/* Center the pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Style the pagination buttons */
+.pagination button {
+  padding: 10px 15px;
+  background-color: #23c74c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover style for buttons */
+.pagination button:hover {
+  background-color: #45a049;
+}
+
+/* Disable style for disabled buttons */
+.pagination button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Style for page numbers */
+.pagination span {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #23c74c;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Current page number style */
+.pagination span.active {
+  background-color: #23c74c;
+  color: white;
+}
+
+/* Hover style for page numbers */
+.pagination span:not(.active):hover {
+  background-color: #f1f1f1;
+}
+
+/* Add CSS to style the "Show More" button */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Add styles for the "active" state of the button */
+button.active {
+  background-color: #007bff;
+}
+
+/* Optional: Disable pointer events on disabled buttons */
+button[disabled] {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.pagination span.current-page {
+  background-color: #23c74c;
+  color: white;
+}

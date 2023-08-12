@@ -1,0 +1,50 @@
+/* CSS VARIABLES */
+:root {
+  --primary: #141414;
+  --light: #F3F3F3;
+  --dark: #686868;
+}
+
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: var(--light);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+/* HEADER */
+
+/* MAIN CONTIANER */
+.main-container {
+  padding: 50px;
+}
+
+.carousel-container {
+  max-width: 100%;
+}
+
+.box {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.box a {
+  display: block;
+  transition: transform 0.3s;
+}
+
+.box a:hover {
+  transform: scale(1.4);
+}
+
+.box img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 2px;
+}
